@@ -1,70 +1,111 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+# React Dashboard App
 
-### `npm start`
+This project is a simple React.js dashboard that displays two charts: a line chart comparing "Sales vs Orders" and a pie chart showing the "Portion of Sales" for different stores. The charts are created using `react-chartjs-2` and `Chart.js`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Table of Contents
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [Installation](#installation)
+- [Folder Structure](#folder-structure)
+- [Usage](#usage)
+- [Components](#components)
+- [Customization](#customization)
+- [License](#license)
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To set up the project locally, follow these steps:
 
-### `npm run build`
+1. Clone the repository
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   git clone https://github.com/your-username/react-dashboard-app.git
+   cd react-dashboard-app
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Install dependencies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   npm install
+   ```
 
-### `npm run eject`
+3. Start the development server:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+   npm start
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The app will be available at `http://localhost:3000`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Folder Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The project structure is as follows:
 
-## Learn More
+```plaintext
+my-dashboard-app/
+│
+├── public/
+│   ├── index.html
+│   └── ...
+├── src/
+│   ├── components/
+│   │   └── Dashboard.jsx
+│   ├── App.jsx
+│   ├── index.js
+│   ├── App.css
+│   └── index.css
+├── package.json
+└── ...
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- public/`: Contains the HTML file and other static assets.
+- `src/`: Contains all the source code.
+  - `components/`: Contains React components.
+  - `App.jsx`: Main application component.
+  - `index.js`: Entry point for the React application.
+  - `App.css`: Styles for the application.
+  - `index.css`: Global styles.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Usage
 
-### Code Splitting
+Once the development server is running, open your web browser and navigate to `http://localhost:3000`. You will see a dashboard with a line chart and a pie chart.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- The line chart shows a comparison of "Sales vs Orders" over time.
+- The pie chart shows the "Portion of Sales" for two stores: WooCommerce Store and Shopify Store.
 
-### Analyzing the Bundle Size
+## Components
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### `Dashboard.jsx`
 
-### Making a Progressive Web App
+This component renders the dashboard, including both the line chart and pie chart. It uses `react-chartjs-2` for integrating `Chart.js` into React.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Line Chart: Displays the sales and orders over time.
+- Pie Chart: Displays the distribution of sales between two stores.
 
-### Advanced Configuration
+### `App.jsx`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This is the main component that includes the `Dashboard` component.
 
-### Deployment
+### `index.js`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+This file is the entry point for the React application and renders the `App` component into the root element of the HTML.
 
-### `npm run build` fails to minify
+## Customization
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+You can customize the charts and the overall look of the dashboard:
+
+1. Update Chart Data:
+
+   Modify the `lineChartData` and `pieChartData` objects in `Dashboard.jsx` to change the data displayed in the charts.
+
+2. Change Chart Colors:
+
+   Update the `backgroundColor` and `borderColor` properties in the `datasets` to change the colors of the charts.
+
+3. Styling:
+
+   Modify `App.css` and `index.css` to change the appearance of the dashboard.
+
